@@ -1,0 +1,156 @@
+main {
+	background: #eee;
+	padding: 10vh 0;
+	h1 {
+		margin-bottom: 10vh;
+	}
+}
+
+h1 {
+	text-align: center;
+}
+
+ul.xoxo {
+	li {
+		list-style-type: none;
+	}
+	h3 {
+		display: none;
+	}
+	ul {
+		list-style-type: none;
+		text-align: center;
+		margin-bottom: 5vh;
+		padding: 0;
+		li {
+			display: inline-block;
+			a {
+				text-decoration: none;
+				padding: 0 1.5vw;
+				color: black;
+			}
+		}
+	}
+}
+
+.blogPost {
+	width: calc(33% - 20px);
+	display: inline-block;
+	transition: all 0.7s;
+	margin: 20px 10px;
+	vertical-align: top;
+	a {
+		color: inherit;
+	}
+	img {
+		// width: 100%;
+	}
+}
+
+.blogPost:hover {
+	box-shadow: 0 8px 25px grey;
+}
+
+.blogText {
+	background: white;
+	padding: 15px;
+	margin-top: -7px;
+	
+	h3 {
+		font-family: 'Playfair Display', serif;
+	}
+	p {
+		margin-top: 0;
+	}
+}
+
+@media all and (max-width: 960px) {
+	.blogPost {
+		width: calc(48% - 20px);
+	}
+	.blogPost:hover {
+		box-shadow: none;
+	}
+}
+
+@media all and (max-width: 540px) {
+	.blogPost {
+		width: calc(98% - 20px);
+	}
+}
+
+//SINGLE BLOG PAGE*****************************
+
+.blogHero {
+	height: 60vh;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.blogContent {
+	max-width: 800px;
+	margin: 0 auto;
+	background: white;
+	padding: 5vw;
+	margin-top: -10%;
+	h1 {
+		text-align: center;
+		// width: 50%;
+	}
+	.blogInfo {
+		border-bottom: 1px solid lightgrey;
+		margin-bottom: 3vw;
+		padding-bottom: 3vw;
+		ul.post-categories {
+			padding: 0;
+			margin-top: 0;
+			li {
+				list-style-type: none;
+			}
+		}
+	}
+}
+
+.blogMain {
+	padding: 0;
+	h2 {
+		text-align: center;
+	}
+	.author img {
+		border-radius: 50%;
+	}
+	.author, .date, .category, .tags {
+		display: inline-block;
+		width: calc(25% - 20px);
+		margin-right: 10px;
+		h4 {
+			margin-bottom: 5px;
+		}
+	}
+	a {
+		color: #898989;
+		text-decoration: none;
+		transition: all 0.4s;
+	}
+	a:hover {
+		text-decoration: underline;
+		text-decoration-color: #898989;
+	}
+	a.categoryBlogTitle {
+		color: black;
+		text-decoration: none;
+		transition: all 0.4s;
+	}
+	a.categoryBlogTitle:hover {
+		text-decoration: underline;
+		text-decoration-color: black;
+	}
+}
+
+.category-blogMain {
+	padding: 10vh 0;
+	.blogContent {
+		margin: 0 auto;
+	}
+}

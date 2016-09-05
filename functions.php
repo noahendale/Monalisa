@@ -26,7 +26,11 @@ function theme_setup() {
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
+		'primary' => 'Primary Navigation',
+		'header2' => 'Secondary Navigation',
+		'footer1' => 'Footer First Column',
+		'footer2' => 'Footer Second Column',
+		'footer3' => 'Footer Third Column'
 	) );
 
 	/*
@@ -51,6 +55,8 @@ function hackeryou_styles(){
 	wp_enqueue_style('style', get_stylesheet_uri() );
 
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+	wp_enqueue_style('googleFonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Poppins:400,600,700');
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -64,7 +70,7 @@ function hackeryou_scripts() {
 	wp_deregister_script('jquery');
   wp_enqueue_script(
   	'jquery',
-  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js",
+  	"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js",
   	false, //dependencies
   	null, //version number
   	true //load in footer
@@ -280,4 +286,36 @@ function get_post_parent($post) {
 	else {
 		return $post->ID;
 	}
+}
+
+if( ! function_exists('fix_no_editor_on_posts_page'))
+{
+	/**
+	 * Add the wp-editor back into WordPress after it was removed in 4.2.2.
+	 *
+	 * @param $post
+	 * @return void
+	 */
+	function fix_no_editor_on_posts_page($post)
+	{
+		if($post->ID != get_option('page_for_posts'))
+			return;
+
+		remove_action('edit_form_after_title', '_wp_posts_page_notice');
+		add_post_type_support('page', 'editor');
+	}
+	add_action('edit_form_after_title', 'fix_no_editor_on_posts_page', 0);
+}
+
+function blog_featured_image($currentPost) {
+	$image_id = get_post_thumbnail_id($currentPost ->ID);
+	$image_url = wp_get_attachment_url($image_id);
+	return $image_url;
+}
+
+//get blog post author role
+function get_author_role($id)
+{
+    $user = new WP_User($id);
+    return array_shift($user->roles);
 }

@@ -1,7 +1,32 @@
 <footer>
-  <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
-  </div>
+    <div class="wrapper clearfix">
+      <div class="container">
+        <?php wp_nav_menu( array(
+            'container' => false,
+            'theme_location' => 'footer1'
+        )); ?>
+        <?php wp_nav_menu( array(
+            'container' => false,
+            'theme_location' => 'footer2'
+        )); ?>
+        <?php wp_nav_menu( array(
+            'container' => false,
+            'theme_location' => 'footer3'
+        )); ?>
+        <div class="newsletter">
+            <p>Sign up to get our monthly newsletter!</p>
+            <input type="email" placeholder="Your email..."><button type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+        </div>
+      </div> <!-- container -->
+      <hr size="1">
+       <h2>Monalisa</h2>
+       <p class="copyright">&copy; <?php echo date('Y'); ?> Noah Endale </p>
+       <div class="social">
+           <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+           <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+           <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+       </div>
+    </div> <!-- wrapper -->
 </footer>
 
 <script>

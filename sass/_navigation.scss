@@ -1,14 +1,112 @@
-ul.menu {
+ul#menu-nav, ul#menu-nav2 {
 	margin: 0;
 	padding: 0;
+	text-align: center;
 	li {
 		display: inline;
 		margin-right: 10px;
 		a {
-			color: #333;
 			padding: 10px;
-			background: #333;
-			color: white;
+			color: black;
+			text-decoration: none;
+			transition: color 0.4s;
 		}
+		a:hover {
+			color: #898989;
+		}
+	}
+}
+
+input[type="checkbox"] {
+	position: absolute;
+	left: -99999px;
+}
+
+header {
+	// position: fixed;
+	// width: 100%;
+	background: white;
+	// z-index: 99;
+	// border-bottom: 1px solid black;
+	label {
+		display: none;
+	}
+	.wrapper {
+		.container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			h2 {
+				a {
+					color: black;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+
+@media all and (max-width: 767px) {
+	input[type='checkbox']#toggle:checked + header {
+		left: 0;
+	}
+	input[type='checkbox']#toggle:checked + header .wrapper label {
+		left: 31vw;
+	}
+	header {
+		width: 30vw;
+		height: 100vh;
+		position: fixed;
+		border-right: 1px solid black;
+		left: -30vw;
+		transition: all 0.4s ease-in-out;
+		.wrapper {
+			position: relative;
+			label {
+				display: block;
+				position: fixed;
+				transition: all 0.4s ease-in-out;
+				left: 2vw;
+				font-size: 3rem;
+			}
+			label:hover {
+				cursor: pointer;
+			}
+			.container {
+				flex-direction: column;
+				align-items: flex-start;
+				#menu-nav, #menu-nav2 {
+					text-align: inherit;
+					width: 100%;
+					li {
+						display: block;
+						font-size: 2.1rem;
+						margin: 3.3vh 0;
+						border-bottom: 1px solid black;
+						width: 100%;
+					}
+				}
+				#menu-nav2 li:first-child {
+					margin-top: 0;
+				}
+
+				h2 {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media all and (max-width: 540px) {
+	header {
+		left: -50vw;
+		width: 50vw;
+	}
+	input[type='checkbox']#toggle:checked + header .wrapper label {
+		left: 51vw;
 	}
 }

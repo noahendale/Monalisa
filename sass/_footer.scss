@@ -1,3 +1,94 @@
 footer {
 	clear: both;
+	background: #212020;
+	color: #898989;
+	.wrapper {
+		position: relative;
+		.container {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			padding: 10vh 0;
+			ul.menu {
+				display: flex;
+				flex-direction: column;
+				list-style-type: none;
+				padding: 0;
+				a {
+					color: #898989;
+					transition: color 0.4s;
+					padding: 0;
+					text-decoration: none;
+				}
+				a:hover {
+					color: white;
+				}
+			}
+			.newsletter{
+				.fa-paper-plane {
+					color: #898989;
+				}
+				input, button {
+					background: none;
+					border: none;
+					font-family: 'Poppins', serif;
+					font-size: 0.9rem;
+				}
+				input {
+					border-bottom: 1px solid #898989;
+					padding-bottom: 5px;
+					color: white;
+					transition: border-bottom 0.4s;
+				}
+				input:focus {
+					border-bottom: 1px solid white;
+					outline: none;
+				}
+				::-webkit-input-placeholder {
+					color: lightgrey;
+				}
+				button {
+					color: white;
+					cursor: pointer;
+				}
+			}
+		}
+		hr {
+			color: #898989;
+		}
+		.copyright {
+			display: inline-block;
+		}
+		h2 {
+			@extend .copyright;
+			margin-right: 10px;
+		}
+		.social {
+			position: absolute;
+			right: 0;
+			bottom: 3vh;
+			@extend .copyright;
+			float: right;
+			a {
+				color: #898989;
+				transition: color 0.4s;
+				padding: 10px;
+			}
+			a:hover {
+				color: white;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 940px) {
+	footer .wrapper .container {
+		padding: 10vh 3vw;
+	}
+}
+
+@media all and (max-width: 767px) {
+	#menu-footer3 {
+		display: none;
+	}
 }

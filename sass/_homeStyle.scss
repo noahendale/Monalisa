@@ -1,0 +1,114 @@
+.hero {
+	background-image: url(images/beach.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	color: white;
+	// padding-top: 15vh;
+	.heroWrapper {
+		display: flex;
+		height: 90vh;
+		.heroText {
+			margin: auto;
+			text-align: center;
+			h1 {
+				font-size: 5rem;
+			}
+			h4.tagLine {
+				letter-spacing: 0.3rem;
+			}
+			h4.welcome {
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+section .wrapper p.sectionHeader {
+	width: 30vw;
+	margin: 0 auto 10vh auto;
+	text-transform: uppercase;
+	color: #898989;
+	text-align: center;
+	letter-spacing: 0.2rem
+}
+
+section.about {
+	padding: 20vh 0;
+	background-image: url(images/swirl_pattern.png);
+	background-color: rgb(128,128,128);
+	background-blend-mode: screen;
+	background-attachment: fixed;
+	.wrapper {
+		text-align: center;
+	}
+	.imageContainer {
+		height: 350px;
+		width: 300px;
+		display: inline-block;
+		border: 10px solid white;
+		background-size: cover;
+	}
+	.introText {
+		display: inline-block;
+		width: 28vw;
+		vertical-align: top;
+		margin-left: 5vw;
+		text-align: left;
+		p {
+			color: #898989;
+		}
+		.author {
+			display: inline-block;
+		}
+		.name {
+			color: black;
+			font-weight: 700;
+		}
+	}
+	hr {
+		width: 5vw;
+		float: left;
+		height: 1px;
+		background: black;
+	}
+}
+.testimonial {
+	text-align: center;
+	margin: 20vh 0;
+	padding: 5vw 12vw;
+	background-image: url(images/swirl_pattern.png);
+	background-color: rgb(128,128,128);
+	background-blend-mode: screen;
+	background-attachment: fixed;
+	.quote {
+		font-family: 'Playfair Display', serif;
+		font-style: italic;
+		line-height: 1.8rem;
+	}
+	.fa {
+		color: yellow;
+	}
+	span {
+		color: black;
+		font-weight: 700;
+	}
+}
+
+@media all and (max-width: 540px) {
+	section.about {
+		.introText {
+			width: 100%;
+		}
+		.imageContainer {
+			display: block;
+			margin: 0 auto 5vh auto;
+		}
+		hr {
+			width: 10vw;
+		}
+	}
+	.testimonial {
+		padding: 5vw 7vw;
+	}
+}

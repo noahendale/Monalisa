@@ -12,19 +12,30 @@
 
 
 <body <?php body_class(); ?>>
-
+ <input type="checkbox" id="toggle">
 <header>
-  <div class="container">
-    <h1>
-      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
-      </a>
-    </h1>
+  <div class="wrapper">
+    <label for="toggle">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </label>
+    <div class="container">
 
-    <?php wp_nav_menu( array(
-      'container' => false,
-      'theme_location' => 'primary'
-    )); ?>
-  </div> <!-- /.container -->
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'primary'
+      )); ?>
+      <h2>
+        <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
+          <?php bloginfo( 'name' ); ?>
+        </a>
+      </h2>
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'header2'
+      )); ?>
+    </div> <!-- /.container -->
+   
+  </div> <!-- .wrapper -->
 </header><!--/.header-->
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlh9Mj1UM1FztauDbDzSuRsicj2luf8Fc&callback=initMap" async defer></script>
